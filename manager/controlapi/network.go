@@ -148,6 +148,7 @@ func (s *Server) GetNetwork(ctx context.Context, request *api.GetNetworkRequest)
 	if n == nil {
 		return nil, status.Errorf(codes.NotFound, "network %s not found", request.NetworkID)
 	}
+	n.FreeIPs = 1
 	return &api.GetNetworkResponse{
 		Network: n,
 	}, nil

@@ -473,6 +473,8 @@ type Network struct {
 	// the services that still use this service, and proceed to delete
 	// this network when all of these services are gone
 	PendingDelete bool `protobuf:"varint,6,opt,name=pending_delete,json=pendingDelete,proto3" json:"pending_delete,omitempty"`
+  // Free IPs in the network
+  FreeIPs uint64 `protobuf:"varint,7,opt,name=free_ips,json=freeIPs,proto3" json:"free_ips,omitempty"`
 }
 
 func (m *Network) Reset()      { *m = Network{} }
