@@ -85,6 +85,14 @@ type NetworkAllocator interface {
 
 	// IsAttachmentAllocated If lb endpoint is allocated on the node
 	IsAttachmentAllocated(node *api.Node, networkAttachment *api.NetworkAttachment) bool
+
+	// UpdateNetworkState updates the network state
+	UpdateNetworkState(network *api.Network) error
+}
+
+// NetworkStateUpdater is an interface for updating the network state in the store.
+type NetworkStateUpdater interface {
+	UpdateNetworkState(*api.Network) error
 }
 
 // Config is used to store network related cluster config in the Manager.

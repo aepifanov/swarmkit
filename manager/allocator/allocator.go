@@ -229,3 +229,7 @@ nextVoter:
 
 	return true
 }
+
+func (a *Allocator) UpdateNetworkState(net *api.Network) error {
+	return a.nwkAllocator.UpdateNetworkState(net)
+}
